@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4"
+  },
+  "name": "Webject_challenge",
+  "version": "1.0.0",
+  "description": "coding_challenge",
+  "main": "server.js",
+  "repository": "https://github.com/ifollowedthewhiterabbit/movies-price-picker",
+  "author": "Vignesh Natarajan",
+  "license": "MIT"
+}

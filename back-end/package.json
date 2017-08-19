@@ -1,9 +1,13 @@
 {
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
-    "nodemon": "^1.11.0"
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.7.2",
+    "nodemon": "^1.11.0",
+    "q": "^1.5.0"
   },
   "name": "Webject_challenge",
   "version": "1.0.0",

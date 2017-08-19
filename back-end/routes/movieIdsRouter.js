@@ -4,25 +4,19 @@ const _ = require('lodash');
 const router = express.Router()
 const Q = require('q');
 
-var output = []
 var movies = []
-
-
 
 router.get('/movieIds', (req, res) => {
 
   cinemaWorldMoviesIdsarray = []
   filmWorldMoviesIdsarray = []
 
-
     const cinemaWorldMovieIds = fetch('http://webjetapitest.azurewebsites.net/api/cinemaworld/movies',{
       headers: {
         "x-access-token": process.env.API_TOKEN
       }
     })
-      .catch((error) => {
-        
-      }) 
+      .catch((error) => {}) 
       .then((apiRes) => apiRes.json())
       .then((json) => {
         json.Movies.map((movie) => {
@@ -30,15 +24,12 @@ router.get('/movieIds', (req, res) => {
         })
       })
 
-
     const filmWorldMovieIds = fetch('http://webjetapitest.azurewebsites.net/api/filmworld/movies',{
       headers: {
         "x-access-token": process.env.API_TOKEN
       }
     })
-      .catch((error) => {
-        
-      })  
+      .catch((error) => {})  
       .then((apiRes) => apiRes.json())
       .then((json) => {
         json.Movies.map((movie) => {
@@ -46,16 +37,12 @@ router.get('/movieIds', (req, res) => {
         })
       })
   
-
-      
   Q.allSettled([cinemaWorldMovieIds, filmWorldMovieIds])
   .then((results) => {
     var movieIds = {
       cinemaWorld: cinemaWorldMoviesIdsarray,
       filmWorld: filmWorldMoviesIdsarray
     }
-
-    var moviePromises = []
 
     cinemaWorldMovies = () => {
       return new Promise((resolve,reject) => {
@@ -65,9 +52,7 @@ router.get('/movieIds', (req, res) => {
               "x-access-token": process.env.API_TOKEN
             }
           })
-          .catch((error) => {
-            //res.json({ error: error })
-          })  
+          .catch((error) => {})  
           .then((apiResponse) => apiResponse.json())
           .then(json => {
             movies.push(json)
@@ -85,9 +70,7 @@ router.get('/movieIds', (req, res) => {
               "x-access-token": process.env.API_TOKEN
             }
           })
-          .catch((error) => {
-            //res.json({ error: error })
-          })  
+          .catch((error) => {})  
           .then((apiResponse) => apiResponse.json())
           .then(json => {
             movies.push(json)
@@ -103,16 +86,5 @@ router.get('/movieIds', (req, res) => {
     })
   })
 })
-
-  
-  
-  
-
-    
-  
-    
-  
-
-
 
 module.exports = router;

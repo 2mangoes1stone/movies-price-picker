@@ -18,7 +18,7 @@ router.get('/cheapestMovie', (req, res) => {
         "x-access-token": process.env.API_TOKEN
       }
     })
-      .then((apiRes) => apiRes.json())
+      .then((apiResponse) => apiResponse.json())
       .then((json) => {
         json.Movies.map((movie) => {
           cinemaWorldMoviesIdsarray.push(movie.ID)
@@ -34,7 +34,7 @@ router.get('/cheapestMovie', (req, res) => {
         "x-access-token": process.env.API_TOKEN
       }
     })  
-      .then((apiRes) => apiRes.json())
+      .then((apiResponse) => apiResponse.json())
       .then((json) => {
         json.Movies.map((movie) => {
           filmWorldMoviesIdsarray.push(movie.ID)

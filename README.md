@@ -1,6 +1,6 @@
 # Webjet Api Test
 
-Hi, Here is my solution to the webject api test.
+Hi, Here is my solution to the webjet api test.
 
 The server side logic has been completely written in node as requested.
 

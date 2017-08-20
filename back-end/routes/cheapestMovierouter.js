@@ -18,26 +18,30 @@ router.get('/cheapestMovie', (req, res) => {
         "x-access-token": process.env.API_TOKEN
       }
     })
-      .catch((error) => {}) 
       .then((apiRes) => apiRes.json())
       .then((json) => {
         json.Movies.map((movie) => {
           cinemaWorldMoviesIdsarray.push(movie.ID)
         })
       })
+      .catch((error) => {
+        return error
+      }) 
 
     // Fetch movies Ids of all filmWorld Movies
     const filmWorldMovieIds = fetch('http://webjetapitest.azurewebsites.net/api/filmworld/movies',{
       headers: {
         "x-access-token": process.env.API_TOKEN
       }
-    })
-      .catch((error) => {})  
+    })  
       .then((apiRes) => apiRes.json())
       .then((json) => {
         json.Movies.map((movie) => {
           filmWorldMoviesIdsarray.push(movie.ID)
         })
+      })
+      .catch((error) => {
+        return error
       })
       
     // Use 'q' library to store resolved promises
@@ -57,12 +61,14 @@ router.get('/cheapestMovie', (req, res) => {
             headers: {
               "x-access-token": process.env.API_TOKEN
             }
-          })
-          .catch((error) => {})  
+          }) 
           .then((apiResponse) => apiResponse.json())
           .then(json => {
             movies.push(json)
           })
+          .catch((error) => {
+            return error
+          }) 
         })
         resolve(movies);
       })
@@ -77,12 +83,14 @@ router.get('/cheapestMovie', (req, res) => {
             headers: {
               "x-access-token": process.env.API_TOKEN
             }
-          })
-          .catch((error) => {})  
+          }) 
           .then((apiResponse) => apiResponse.json())
           .then(json => {
             movies.push(json)
           })
+          .catch((error) => {
+            return error
+          }) 
         })
         resolve(movies);
       })

@@ -11,7 +11,7 @@ class App extends Component {
     cheapestMovie: null
   }
 
-  getCheapestMovie = () => [
+  getCheapestMovie = () => {
     cheapestMovieApi.getCheapestMovie()
       .then((cheapestMovie) => {
         this.setState({ cheapestMovie: cheapestMovie })
@@ -19,7 +19,7 @@ class App extends Component {
       .catch(error => {
         this.setState({ error })
       })
-  ]
+  }
 
   fetchAllMovies = () => {
     moviesApi.getAllMovies()

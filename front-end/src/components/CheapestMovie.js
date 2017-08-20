@@ -6,10 +6,10 @@ export default function Movie({
   return (
     <div style={{ textAlign: "center" }}>
       <h1>{movie.Title}</h1>
-      <h5>Relesed Year: {movie.Released}</h5>
+      <h4>Relesed Year: {movie.Released}</h4>
       <p>Director: {movie.Director}</p>
       <p>Plot: {movie.Plot}</p>
-      <h6>Price: {movie.Price}</h6>
+      <p style={{ fontSize: "25px" }}>Price: ${movie.Price}</p>
       <img src={movie.Poster} alt={movie.Title} height="100" width="100" />
     </div>
   )

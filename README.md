@@ -16,6 +16,5 @@ https://api-moviesapitest.now.sh
 
 The back end is hosted at 
 ```
-https://api-moviesapitest.netlify.com
+https://api-moviesapitest.now.sh
 ```
-

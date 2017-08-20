@@ -11,7 +11,7 @@ As per the instructions, the given api's are pinged and promise rejections are a
 Please go to the following Url to see the hosted site
 
 ```
-https://api-moviesapitest.now.sh
+https://moviesapitest.now.sh
 ```
 
 The back end is hosted at 

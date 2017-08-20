@@ -8,7 +8,7 @@ I have also used React for client side rendering.
 
 As per the instructions, the given api's are pinged and promise rejections are also handled so that only resolved promises are accounted for.
 
-Please go to the following Url to see the hosted site
+Please visit the following url to see the hosted site
 
 ```
 https://moviesapitest.now.sh

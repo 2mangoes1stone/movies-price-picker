@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const movieIdsrouter = require('./routes/movieIdsRouter');
+const cheapestMovieRouter = require('./routes/cheapestMovierouter');
 
 // kick off express server
 const server = express();
@@ -10,7 +10,7 @@ const server = express();
 server.use(bodyParser.json());
 
 // Use imported routes
-server.use('/api', movieIdsrouter)
+server.use('/api', cheapestMovieRouter)
 
 // set up error response in json
 server.use((error, req, res, next) => {

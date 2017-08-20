@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const cheapestMovieRouter = require('./routes/cheapestMovierouter');
 const moviesListRouter = require('./routes/moviesListRouter');
 
@@ -9,6 +10,11 @@ const server = express();
 
 // middleware
 server.use(bodyParser.json());
+
+// CORS
+server.use(cors({
+  origin: process.env.CORS_ORIGINS,
+}));
 
 // Use imported routes
 server.use('/api', [

@@ -14,8 +14,9 @@ router.get('/cheapestMovie', (req, res) => {
     
     // Fetch movies Ids of all cimenaWorld Movies
     const cinemaWorldMovieIds = fetch('http://webjetapitest.azurewebsites.net/api/cinemaworld/movies',{
+      method: 'GET',
+      mode :'cors',
       headers: {
-        method: 'GET',
         "Content-Type": "application/json",
         "x-access-token": process.env.API_TOKEN
       }
@@ -32,8 +33,9 @@ router.get('/cheapestMovie', (req, res) => {
 
     // Fetch movies Ids of all filmWorld Movies
     const filmWorldMovieIds = fetch('http://webjetapitest.azurewebsites.net/api/filmworld/movies',{
+      method: 'GET',
+      mode :'cors',
       headers: {
-        method: 'GET',
         "Content-Type": "application/json",
         "x-access-token": process.env.API_TOKEN
       }

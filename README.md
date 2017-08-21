@@ -18,3 +18,4 @@ The back end is hosted at
 ```
 https://api-moviesapitest.now.sh
 ```
+Endpoints for this are /api/cheapestMovie & /api/moviesList

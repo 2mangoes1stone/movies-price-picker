@@ -30,9 +30,7 @@ server.use((error, req, res, next) => {
   });
 }); 
 
-const port = process.env.PORT || 8000
-
 // Start local server
-server.listen(port, () => {
-  console.log(`Server listening on port: ${port}`);
+server.listen(8000, () => {
+  console.log(`Server listening on port: 8000`);
 });
